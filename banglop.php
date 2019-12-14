@@ -10,6 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
@@ -129,6 +130,10 @@ footer {
 </nav>
 <article style="background: #f1f1f1;">
   <h3>Quản Lý Lớp</h3>
+  <button><a href="#">Thêm</a></button>
+  <button><a href="#">Sửa</a></button>
+  <button><a href="#">Xóa</a></button>
+  <p></p>
     <table style="width:110%;height: 300px;">
         <tr>
           <th>Mã Lớp</th>

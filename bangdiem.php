@@ -10,6 +10,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- btn -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- btn -->
+
+  <!-- search -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="search_box.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="search.css">
+
+  <!-- search -->
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
@@ -18,12 +31,7 @@
       margin-bottom: 0;
       border-radius: 0;
     }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
+
     body{
       margin: auto;
     }
@@ -90,10 +98,44 @@ footer {
     height: auto;
   }
 }
+
+/*3*/
+.scroll{
+  display: block;
+  border: 3px double black;
+  padding: 5px;
+  margin-top: 5px;
+  overflow: scroll;
+  }
+  .edit{
+    width: 1000px;
+    height: 410px;
+    border: 2px groove black;
+  }
+  header{
+    background-image: url("vietyen1.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  body{
+    background-color: lightblue;
+  }
+  .img{
+    width: 1500px;
+    height: 200px;
+  }
+
+  .themxoasua{
+    margin-left: 50px;
+  }
+  .h3{
+    margin: 7px;
+  }
+
+  /*3*/
   </style>
 </head>
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -102,7 +144,7 @@ footer {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#">SỞ GD & ĐÀO TẠO - TRƯỜNG THPT VIỆT YÊN SỐ 1</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       
@@ -112,6 +154,11 @@ footer {
     </div>
   </div>
 </nav>
+<!-- 2 -->
+
+<img class="img" src="vy1logo.jpg">
+
+<!-- 2 -->
 <section>
     <nav  >
 <div class="vertical-menu">
@@ -128,9 +175,23 @@ footer {
   </ul>
 </div>
 </nav>
-<article style="background: #f1f1f1;">
-  <h3>Quản Lý Điểm</h3>
-    <table style="width:110%;height: 300px;">
+
+<!-- 1 -->
+<article style="background: lightblue;padding: 0px;">
+  <h3 class="h3">Quản Lý Điểm</h3>
+  <div class=" sangphai">
+    <div class="box">
+      <input type="text" placeholder="Search here">
+      <a class="a1"><i class="fas fa-search-location"></i></a>
+    </div>
+  </div>
+  <button class="themxoasua"><a href="#">Thêm</a></button>
+  <button class="themxoasua"><a href="#">Sửa</a></button>
+  <button class="themxoasua"><a href="#">Xóa</a></button>
+  <p></p>
+      <div class="scroll"; style="width:999px;height: 420px;">
+        <table class="edit">
+<!-- 1 -->
         <tr>
           <th>Mã HS</th>
           <th>Năm Học</th> 
@@ -161,13 +222,14 @@ footer {
       }
       ?>
       </table>
+      </div>
 </article>
 </section>
 
 <footer>
-    <p>Liên hệ : 0967043798</p>
+    <p>SỞ GIÁO DỤC & ĐÀO TẠO TỈNH BẮC GIANG</p>
     <p>Email : thptvietyenso1@gmail.com</p>
-    <p>Địa chỉ : Nha Trang - Khánh Hòa - Việt Nam</p>
+    <p>Địa chỉ : TT BÍCH ĐỘNG - VIỆT YÊN - BẮC GIANG</p>
   </footer>
 
 </body>

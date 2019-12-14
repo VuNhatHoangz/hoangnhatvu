@@ -1,0 +1,56 @@
+body > div {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sangphai{
+  padding-left: 820px;
+  margin-top: 0px;
+}
+ 
+.box {
+  height: 40px;
+  background-color: darkcyan;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+}
+ 
+input {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 0px;
+  transition: 0.8s ease;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+ 
+input::placeholder {
+  color: antiquewhite;
+}
+ 
+.a1 {
+  color: whitesmoke;
+  text-align: center;
+  width: 60px;
+  font-size: 18px;
+}
+ 
+.box:hover input {
+  width: 200px;
+  margin: 0 20px;
+  border-bottom: 2px solid red;
+}
+ 
+input:focus {
+  width: 200px;
+  margin: 0 20px;
+  border-bottom: 2px solid red;
+}

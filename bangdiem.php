@@ -5,6 +5,8 @@
       include ('connect.php');
 
       $query = mysqli_query($db,"SELECT * FROM diem");
+      $query1 = mysqli_query($db,"SELECT * FROM MonHoc");
+      $query2 = mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 2</title>
   <meta charset="utf-8">
@@ -188,6 +190,48 @@ footer {
   <button class="themxoasua"><a href="#">Thêm</a></button>
   <button class="themxoasua"><a href="#">Sửa</a></button>
   <button class="themxoasua"><a href="#">Xóa</a></button>
+  <select onchange="Redirect(this)">
+    <?php
+      if (mysqli_num_rows($query1) > 0) {
+              while($result1=mysqli_fetch_array($query1)){
+                if($result1['MaMon']==$_GET['mon'])
+                {
+                  echo "<option value =bangdiem.php?mon=".$result1['MaMon']." selected >".$result1['TenMonHoc']."</option>";
+                }
+                else
+                {
+                    echo "<option value =bangdiem.php?mon=".$result1['MaMon'].">".$result1['TenMonHoc']."</option>";
+                }
+                
+              }
+      }
+    ?>
+  </select>
+  <select onchange="Redirect(this)">
+    <?php
+      if (mysqli_num_rows($query2) > 0) {
+              while($result2=mysqli_fetch_array($query2)){
+                if($result2['MaMon']==$_GET['mon'])
+                {
+                  echo "<option value =bangdiem.php?mon=".$result2['TenLop']." selected >".$result2['TenLop']."</option>";
+                }
+                else
+                {
+                    echo "<option value =bangdiem.php?mon=".$result2['TenLop'].">".$result2['TenLop']."</option>";
+                }
+                
+              }
+      }
+    ?>
+  </select>
+  <script type="text/javascript">
+         <!--
+            function Redirect(obj) {
+              var value = obj.value;
+              window.location="http://localhost:91/hoangnhatvu/"+value;
+            }
+         //-->
+  </script>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">

@@ -4,7 +4,10 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM HocSinh");
+      $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop WHERE HocSinh.MaLop = Lop.MaLop and 
+        Lop.TenLop='".$_GET['lop']."'");
+
+      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 2</title>
   <meta charset="utf-8">
@@ -193,6 +196,31 @@ footer {
   <button class="themxoasua"><a href="#">Thêm</a></button>
   <button class="themxoasua"><a href="#">Sửa</a></button>
   <button class="themxoasua"><a href="#">Xóa</a></button>
+  <select onchange="Redirect(this)">
+    <?php
+      if (mysqli_num_rows($query1) > 0) {
+              while($result1=mysqli_fetch_array($query1)){
+                if($result1['TenLop']==$_GET['lop'])
+                {
+                  echo "<option value =banghocsinh.php?lop=".$result1['TenLop']." selected >".$result1['TenLop']."</option>";
+                }
+                else
+                {
+                    echo "<option value =banghocsinh.php?lop=".$result1['TenLop'].">".$result1['TenLop']."</option>";
+                }
+                
+              }
+      }
+    ?>
+     <script type="text/javascript">
+         <!--
+            function Redirect(obj) {
+              var value = obj.value;
+              window.location="http://localhost:91/hoangnhatvu/"+value;
+            }
+         //-->
+      </script>
+  </select>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
@@ -204,7 +232,6 @@ footer {
           <th>Địa Chỉ</th>
           <th>Ngày Sinh</th>
           <th>Quê Quán</th>
-          <th>Mã Lớp</th>
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -217,7 +244,6 @@ footer {
             <td><?php echo $result['DiaChi']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>
             <td><?php echo $result['QueQuan']; ?></td>
-            <td><?php echo $result['MaLop']; ?></td>
           </tr>
       <?php
         }

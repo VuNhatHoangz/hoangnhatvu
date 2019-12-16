@@ -6,7 +6,7 @@
 
       $query = mysqli_query($db,"SELECT * FROM GiaoVien");
 ?>
-  <title>Quản Lý Học Sinh THPT Việt Yên Số 2</title>
+  <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -220,9 +220,9 @@ footer {
 </section>
 
 <footer>
-    <p>Liên hệ : 0967043798</p>
+    <p>SỞ GIÁO DỤC & ĐÀO TẠO TỈNH BẮC GIANG</p>
     <p>Email : thptvietyenso1@gmail.com</p>
-    <p>Địa chỉ : Nha Trang - Khánh Hòa - Việt Nam</p>
+    <p>Địa chỉ : TT BÍCH ĐỘNG - VIỆT YÊN - BẮC GIANG</p>
   </footer>
 
 </body>

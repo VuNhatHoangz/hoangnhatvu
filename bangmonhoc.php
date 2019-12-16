@@ -220,9 +220,9 @@ footer {
 </section>
 
 <footer>
-    <p>Liên hệ : 0967043798</p>
+    <p>SỞ GIÁO DỤC & ĐÀO TẠO TỈNH BẮC GIANG</p>
     <p>Email : thptvietyenso1@gmail.com</p>
-    <p>Địa chỉ : Nha Trang - Khánh Hòa - Việt Nam</p>
+    <p>Địa chỉ : TT BÍCH ĐỘNG - VIỆT YÊN - BẮC GIANG</p>
   </footer>
 
 </body>

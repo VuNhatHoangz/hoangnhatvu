@@ -9,7 +9,7 @@
 
       $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
-  <title>Quản Lý Học Sinh THPT Việt Yên Số 2</title>
+  <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -153,7 +153,7 @@ footer {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#">SỞ GD & ĐÀO TẠO - TRƯỜNG THPT VIỆT YÊN SỐ 1</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       

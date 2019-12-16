@@ -150,7 +150,7 @@ footer {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#">SỞ GD & ĐÀO TẠO - TRƯỜNG THPT VIỆT YÊN SỐ 1</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       

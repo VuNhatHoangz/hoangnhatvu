@@ -94,6 +94,8 @@ img.avatar {
 
 .container {
   padding: 16px;
+  width: 1000px;
+  margin: auto;
 }
 
 span.psw {
@@ -111,11 +113,15 @@ span.psw {
      width: 100%;
   }
 }
+
+h2{
+  text-align: center;
+}
 </style>
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2>Đăng Nhập</h2>
 
 <form action="dangnhap.php?do=login" method="post">
   <div class="imgcontainer">
@@ -131,7 +137,7 @@ span.psw {
         
     <button type="submit" name="xldangnhap">Login</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <input type="checkbox" checked="checked" name="remember"> Remember Password
     </label>
   </div>
 

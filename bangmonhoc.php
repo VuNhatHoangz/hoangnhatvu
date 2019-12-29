@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -206,8 +206,8 @@ footer {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaMon']; ?></td>
-            <td><?php echo $result['TenMonHoc']; ?></td>
+            <td><?php echo $result['MaMH']; ?></td>
+            <td><?php echo $result['TenMH']; ?></td>
 
           </tr>
       <?php

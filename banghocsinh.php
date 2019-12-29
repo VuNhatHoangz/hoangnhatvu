@@ -158,7 +158,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -216,7 +216,7 @@ footer {
          <!--
             function Redirect(obj) {
               var value = obj.value;
-              window.location="http://localhost:91/hoangnhatvu/"+value;
+              window.location="http://localhost:8888/hoangnhatvu/"+value;
             }
          //-->
       </script>
@@ -232,6 +232,8 @@ footer {
           <th>Địa Chỉ</th>
           <th>Ngày Sinh</th>
           <th>Quê Quán</th>
+          <th>Lớp</th>
+          <th>Giới Tính</th>
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -244,6 +246,9 @@ footer {
             <td><?php echo $result['DiaChi']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>
             <td><?php echo $result['QueQuan']; ?></td>
+            <td><?php echo $result['MaLop']; ?></td>
+            <td><?php echo $result['GioiTinh']; ?></td>
+
           </tr>
       <?php
         }

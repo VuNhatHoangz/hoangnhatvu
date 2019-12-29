@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -198,10 +198,10 @@ footer {
         <table class="edit">
 <!-- 1 -->
         <tr>
-          <th>Mã Hạnh Kiểm</th>
+          <th>Học Sinh</th>
           <th>Năm Học</th> 
-          <th>Học Kì</th>
-          <th>Hạnh Kiểm</th>
+          <th>Học Kỳ</th>
+          <th>Loại Hạnh Kiểm</th>
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {

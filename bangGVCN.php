@@ -197,6 +197,8 @@ footer {
           <th>Tên Giáo Viên</th> 
           <th>Địa Chỉ</th>
           <th>Số Điện Thoại</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -207,6 +209,8 @@ footer {
             <td><?php echo $result['TenGV']; ?></td>
             <td><?php echo $result['DiaChi']; ?></td>
             <td><?php echo $result['SDT']; ?></td>
+            <td></td>
+            <td></td>
           </tr>
       <?php
         }

@@ -198,6 +198,8 @@ footer {
         <tr>
           <th>Mã Môn Học</th>
           <th>Tên Môn Học</th> 
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -205,7 +207,9 @@ footer {
           ?>
         <tr>
             <td><?php echo $result['MaMH']; ?></td>
-            <td><a href="#"><?php echo $result['TenMH']; ?></a></td>
+            <td><a href="diemmonhoc.php?id=<?php echo $result['MaMH']; ?>&hk=I&lop=Lop10a0"><?php echo $result['TenMH']; ?></a></td>
+            <td></td>
+            <td></td>
 
           </tr>
       <?php

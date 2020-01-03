@@ -4,7 +4,10 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM MonHoc");
+      $query = mysqli_query($db,"SELECT * FROM diem,hocsinh,monhoc where diem.MaHS=hocsinh.MaHS and diem.MaMH = monhoc.MaMH 
+                            and diem.HocKy ='".$_GET['hk']."' and diem.MaMH = '".$_GET['id']."' and hocsinh.MaLop='".$_GET['lop']."'");
+      $query1 = mysqli_query($db,"select * from monhoc where MaMH='".$_GET['id']."'");
+      $query2 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -183,29 +186,80 @@ footer {
 </nav>
 <!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
-  <h3 class="h3">Quản Lý Môn Học</h3>
-  <div class=" sangphai">
+  <?php
+    if (mysqli_num_rows($query1) > 0) {
+       while($result1=mysqli_fetch_array($query1)){
+  ?>
+  <h3 class="h3">Điểm Môn Học <?php echo $result1['TenMH']; ?></h3>
+  <?php
+    }
+  }
+  ?>
+  <!-- <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
-  </div>
-  <button class="themxoasua"><a href="#">Thêm</a></button>
+  </div> -->
+  <button class="themxoasua"><a href="#">Học Kì 1</a></button>
+  <button class="themxoasua"><a href="#">Học Kì 2</a></button>
+  <select onchange="Redirect(this)">
+    <?php
+      if (mysqli_num_rows($query2) > 0) {
+              while($result1=mysqli_fetch_array($query2)){
+                if($result1['MaLop']==$_GET['lop'])
+                {
+                  echo "<option value =diemmonhoc.php?id=".$_GET['id']."&hk=".$_GET['hk']."&lop=".$result1['MaLop']." selected >".$result1['TenLop']."</option>";
+                }
+                else
+                {
+                    echo "<option value =diemmonhoc.php?id=".$_GET['id']."&hk=".$_GET['hk']."&lop=".$result1['MaLop'].">".$result1['TenLop']."</option>";
+                }
+                
+              }
+      }
+    ?>
+     <script type="text/javascript">
+         <!--
+            function Redirect(obj) {
+              var value = obj.value;
+              window.location="http://localhost:8888/hoangnhatvu/"+value;
+            }
+         //-->
+      </script>
+  </select>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
 <!-- 1 -->
         <tr>
-          <th>Mã Môn Học</th>
-          <th>Tên Môn Học</th> 
+          <th>Mã Học Sinh</th>
+          <th>Họ Học Sinh</th>
+          <th>Tên Học Sinh</th>
+          <th>Ngày Sinh</th>
+          <th>Điểm Miệng</th>
+          <th>Điểm 15P</th>
+          <th>Điểm 1Tiết</th>
+          <th>Điểm Học Kỳ</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
+
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaMH']; ?></td>
-            <td><a href="#"><?php echo $result['TenMH']; ?></a></td>
+            <td><?php echo $result['MaHS']; ?></td>
+            <td><?php echo $result['HoHS']; ?></td>
+            <td><?php echo $result['TenHS']; ?></td>
+            <td><?php echo $result['NgaySinh']; ?></td>
+            <td><?php echo $result['DiemMieng']; ?></td>
+            <td><?php echo $result['Diem15Phut']; ?></td>
+            <td><?php echo $result['Diem1Tiet']; ?></td>
+            <td><?php echo $result['DiemHK']; ?></td>
+            <td></td>
+            <td></td>
 
           </tr>
       <?php

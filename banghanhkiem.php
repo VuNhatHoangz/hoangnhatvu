@@ -202,6 +202,8 @@ footer {
           <th>Năm Học</th> 
           <th>Học Kỳ</th>
           <th>Loại Hạnh Kiểm</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -212,6 +214,8 @@ footer {
             <td><?php echo $result['NamHoc']; ?></td>
             <td><?php echo $result['HocKy']; ?></td>
             <td><?php echo $result['HanhKiem']; ?></td>
+            <td></td>
+            <td></td>
           </tr>
           <?php
         }

@@ -243,6 +243,8 @@ footer {
           <th>Điểm 15p</th>
           <th>Điểm 1Tiet</th>
           <th>Điểm Học Kỳ</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
           <?php
             if (mysqli_num_rows($query) > 0) {
@@ -257,6 +259,8 @@ footer {
             <td><?php echo $result['Diem15phut']; ?></td>
             <td><?php echo $result['Diem1Tiet']; ?></td>
             <td><?php echo $result['DiemHK']; ?></td>
+            <td></td>
+            <td></td>
           </tr>
         
       <?php

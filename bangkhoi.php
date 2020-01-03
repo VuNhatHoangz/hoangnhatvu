@@ -183,13 +183,13 @@ footer {
 <!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
   <h3 class="h3">Quản Lý Khối</h3>
-  <div class=" sangphai">
+  <!-- <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
   </div>
-  <button class="themxoasua"><a href="#">Thêm</a></button>
+  <button class="themxoasua"><a href="#">Thêm</a></button> -->
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">

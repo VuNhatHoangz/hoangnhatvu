@@ -232,6 +232,8 @@ footer {
           <th>Quê Quán</th>
           <th>Lớp</th>
           <th>Giới Tính</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -246,6 +248,8 @@ footer {
             <td><?php echo $result['QueQuan']; ?></td>
             <td><?php echo $result['MaLop']; ?></td>
             <td><?php echo $result['GioiTinh']; ?></td>
+            <td></td>
+            <td></td>
 
           </tr>
       <?php

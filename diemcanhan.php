@@ -4,7 +4,9 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM GiaoVien");
+      $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop,monhoc,diem WHERE HocSinh.MaLop = Lop.MaLop and HocSinh.MaHS ='".$_GET['id']."' and Diem.MaHS = HocSinh.MaHS and Diem.MaMH = monhoc.MaMH and diem.HocKy ='".$_GET['hk']."'");
+
+      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -160,6 +162,7 @@ footer {
     </div>
   </div>
 </nav>
+
 <!-- 2 -->
 
 <img class="img" src="vy1logo.jpg">
@@ -169,9 +172,9 @@ footer {
     <nav  >
 <div class="vertical-menu">
     <ul class="nav navbar-nav">
-    <?php include ('menu.php'); ?>
-    <!-- <li><a href="#" class="active">Học Sinh</a></li><br/>
-    <li><a href="#" class="active">Điểm</a></li><br/>
+        <?php       include ('menu.php'); ?>
+    <!-- <li><a href="http://localhost:91/website/banghocsinh.html" class="active">Học Sinh</a></li><br/>
+    <li><a href="http://localhost:91/website/bangkhoi.html" class="active">Điểm</a></li><br/>
     <li><a href="#" class="active">Lớp</a></li><br/>
     <li><a href="#" class="active">GVCN</a></li><br/>
     <li><a href="#" class="active">Khối</a></li><br/>
@@ -180,8 +183,9 @@ footer {
   </ul>
 </div>
 </nav>
+<!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
-  <h3 class="h3">Quản Lý Giáo Viên</h3>
+  <h3 class="h3">Bảng Điểm Cá Nhân</h3>
   <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
@@ -189,24 +193,62 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
+  <select onchange="Redirect(this)">
+    <?php
+      if($_GET['hk']=="I")
+      {
+        echo "<option value='I' selected>I</option>
+              <option value='II'>II</option>";
+      }
+      else
+      {
+        echo "<option value='I'>I</option>
+              <option value='II' selected>II</option>";
+      }
+      ?>
+
+     <script type="text/javascript">
+         <!--
+            var id = "<?php echo $_GET['id'] ?>";
+            function Redirect(obj) {
+              var value = obj.value;
+              window.location="http://localhost:8888/hoangnhatvu/diemcanhan.php?id="+id+"&hk="+value;
+            }
+         //-->
+      </script>
+  </select>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
+<!-- 1 -->
         <tr>
-          <th>Mã GV</th>
-          <th>Tên Giáo Viên</th> 
-          <th>Địa Chỉ</th>
-          <th>Số Điện Thoại</th>
+          <th>Họ Học Sinh</th>
+          <th>Tên Học Sinh</th> 
+          <th>Ngày Sinh</th>
+          <th>Giới Tính</th>
+          <th>Lớp</th>
+          <th>Môn Học</th>
+          <th>Điểm Miệng</th>
+          <th>Điểm 15p</th>
+          <th>Điểm 1 Tiết</th>
+          <th>Điểm Học Kỳ</th>
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaGV']; ?></td>
-            <td><?php echo $result['TenGV']; ?></td>
-            <td><?php echo $result['DiaChi']; ?></td>
-            <td><?php echo $result['SDT']; ?></td>
+            <td><?php echo $result['HoHS']; ?></td>
+            <td><?php echo $result['TenHS']; ?></td>
+            <td><?php echo $result['NgaySinh']; ?></td>
+            <td><?php echo $result['GioiTinh']; ?></td>
+            <td><?php echo $result['TenLop']; ?></td>
+            <td><?php echo $result['TenMH']; ?></td>
+            <td><?php echo $result['DiemMieng']; ?></td>
+            <td><?php echo $result['Diem15Phut']; ?></td>
+            <td><?php echo $result['Diem1Tiet']; ?></td>
+            <td><?php echo $result['DiemHK']; ?></td>
+
           </tr>
       <?php
         }
@@ -222,6 +264,8 @@ footer {
     <p>Email : thptvietyenso1@gmail.com</p>
     <p>Địa chỉ : TT BÍCH ĐỘNG - VIỆT YÊN - BẮC GIANG</p>
   </footer>
-
+<script type="text/javascript">
+  
+</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
       $query1 = mysqli_query($db,"SELECT * FROM MonHoc");
       $query2 = mysqli_query($db,"SELECT * FROM Lop");
 ?>
-  <title>Quản Lý Học Sinh THPT V2342342iệt Yên Số 1</title>
+  <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -188,8 +188,6 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
   <select onchange="Redirect(this)">
     <?php
       if (mysqli_num_rows($query1) > 0) {

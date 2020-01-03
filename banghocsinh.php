@@ -193,9 +193,7 @@ footer {
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
   </div>
-  <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
+  <button class="themxoasua"><a href="themhs.php">Thêm</a></button>
   <select onchange="Redirect(this)">
     <?php
       if (mysqli_num_rows($query1) > 0) {
@@ -242,7 +240,7 @@ footer {
         <tr>
             <td><?php echo $result['MaHS']; ?></td>
             <td><?php echo $result['HoHS']; ?></td>
-            <td><?php echo $result['TenHS']; ?></td>
+            <td><a href="diemcanhan.php?id=<?php echo $result['MaHS'] ?>&hk=I"><?php echo $result['TenHS']; ?></a></td>
             <td><?php echo $result['DiaChi']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>
             <td><?php echo $result['QueQuan']; ?></td>

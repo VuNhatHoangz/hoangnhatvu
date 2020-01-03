@@ -4,7 +4,10 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM GiaoVien");
+      $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop WHERE HocSinh.MaLop = Lop.MaLop and 
+        Lop.TenLop='".$_GET['lop']."'");
+
+      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -160,6 +163,7 @@ footer {
     </div>
   </div>
 </nav>
+
 <!-- 2 -->
 
 <img class="img" src="vy1logo.jpg">
@@ -169,9 +173,9 @@ footer {
     <nav  >
 <div class="vertical-menu">
     <ul class="nav navbar-nav">
-    <?php include ('menu.php'); ?>
-    <!-- <li><a href="#" class="active">Học Sinh</a></li><br/>
-    <li><a href="#" class="active">Điểm</a></li><br/>
+        <?php       include ('menu.php'); ?>
+    <!-- <li><a href="http://localhost:91/website/banghocsinh.html" class="active">Học Sinh</a></li><br/>
+    <li><a href="http://localhost:91/website/bangkhoi.html" class="active">Điểm</a></li><br/>
     <li><a href="#" class="active">Lớp</a></li><br/>
     <li><a href="#" class="active">GVCN</a></li><br/>
     <li><a href="#" class="active">Khối</a></li><br/>
@@ -180,33 +184,44 @@ footer {
   </ul>
 </div>
 </nav>
+<!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
-  <h3 class="h3">Quản Lý Giáo Viên</h3>
+  <h3 class="h3">Thêm Học Sinh</h3>
   <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
   </div>
-  <button class="themxoasua"><a href="#">Thêm</a></button>
-  <p></p>
+  <button class="themxoasua"><a href="#">Lưu</a></button>
+  
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
+<!-- 1 -->
         <tr>
-          <th>Mã GV</th>
-          <th>Tên Giáo Viên</th> 
+          <th>Mã HS</th>
+          <th>Họ HS</th> 
+          <th>Tên HS</th>
           <th>Địa Chỉ</th>
-          <th>Số Điện Thoại</th>
+          <th>Ngày Sinh</th>
+          <th>Quê Quán</th>
+          <th>Lớp</th>
+          <th>Giới Tính</th>
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaGV']; ?></td>
-            <td><?php echo $result['TenGV']; ?></td>
+            <td><?php echo $result['MaHS']; ?></td>
+            <td><?php echo $result['HoHS']; ?></td>
+            <td><a href="diemcanhan.php?id=<?php echo $result['MaHS'] ?>&hk=I"><?php echo $result['TenHS']; ?></a></td>
             <td><?php echo $result['DiaChi']; ?></td>
-            <td><?php echo $result['SDT']; ?></td>
+            <td><?php echo $result['NgaySinh']; ?></td>
+            <td><?php echo $result['QueQuan']; ?></td>
+            <td><?php echo $result['MaLop']; ?></td>
+            <td><?php echo $result['GioiTinh']; ?></td>
+
           </tr>
       <?php
         }

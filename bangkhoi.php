@@ -190,8 +190,6 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">

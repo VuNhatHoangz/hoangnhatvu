@@ -190,8 +190,16 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
+  <!-- <input type="button" name="Add to Cart">
+  <?php if ($_SESSION['pl']==1) {
+    echo 'onclick="addtocart('.$_SESSION['pl'].')" ';
+  }
+  else
+  {
+       echo ' disabled=disabled ';
+  }
+?>
+ /> -->
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">

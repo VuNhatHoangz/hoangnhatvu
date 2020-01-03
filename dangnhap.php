@@ -38,11 +38,12 @@
   
     //Lưu tên đăng nhập
     $_SESSION['taikhoan'] = $username;
+    $_SESSION['pl'] = $row['phanloai'];
     if($row['phanloai'] == 1){
       header("Location: bangGVCN.php");
     }
     else{
-      header("Location: bangdiem.php");
+      header("Location: banghocsinh.php");
     }
       exit;
 }

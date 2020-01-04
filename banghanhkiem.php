@@ -223,9 +223,13 @@ footer {
         <table class="edit">
 <!-- 1 -->
         <tr>
+<<<<<<< HEAD
           <th>Mã Học Sinh</th>
           <th>Họ Học Sinh</th>
           <th>Tên Học Sinh</th>
+=======
+          <th>Học Sinh</th>
+>>>>>>> 6228da740d5745bed08a75535f948504eb037afe
           <th>Năm Học</th> 
           <th>Học Kỳ</th>
           <th>Loại Hạnh Kiểm</th>
@@ -241,6 +245,7 @@ footer {
             <td><?php echo $result['HoHS']; ?></td>
             <td><?php echo $result['TenHS']; ?></td>
             <td><?php echo $result['NamHoc']; ?></td>
+<<<<<<< HEAD
             <td><?php echo $result['LoaiHK']; ?></td>
             <td>
               <a href="#">
@@ -254,6 +259,12 @@ footer {
                 <img src="delete.png">
               </a>
             </td>
+=======
+            <td><?php echo $result['HocKy']; ?></td>
+            <td><?php echo $result['HanhKiem']; ?></td>
+            <td></td>
+            <td></td>
+>>>>>>> 6228da740d5745bed08a75535f948504eb037afe
           </tr>
           <?php
         }

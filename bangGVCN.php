@@ -190,7 +190,7 @@ footer {
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
   <p></p>
-      <div class="scroll"; style="width:999px;height: 420px;">
+      <div class="scroll"; style="width:999px;height: 385px;">
         <table class="edit">
         <tr>
           <th>Mã GV</th>

@@ -5,6 +5,7 @@
       include ('connect.php');
 
       $query = mysqli_query($db,"SELECT * FROM HanhKiemhs");
+      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -193,12 +194,38 @@ footer {
   <button class="themxoasua"><a href="#">Thêm</a></button>
  <!--  <button class="themxoasua"><a href="#">Sửa</a></button>
   <button class="themxoasua"><a href="#">Xóa</a></button> -->
+  <select onchange="Redirect(this)">
+    <?php
+      if($_GET['hk']=="I")
+      {
+        echo "<option value='I' selected>I</option>
+              <option value='II'>II</option>";
+      }
+      else
+      {
+        echo "<option value='I'>I</option>
+              <option value='II' selected>II</option>";
+      }
+      ?>
+
+     <script type="text/javascript">
+         <!--
+            var id = "<?php echo $_GET['id'] ?>";
+            function Redirect(obj) {
+              var value = obj.value;
+              window.location="http://localhost:8888/hoangnhatvu/banghanhkiem.php?id="+id+"&hk="+value;
+            }
+         //-->
+      </script>
+  </select>
   <p></p>
-      <div class="scroll"; style="width:999px;height: 420px;">
+      <div class="scroll"; style="width:999px;height: 385px;">
         <table class="edit">
 <!-- 1 -->
         <tr>
-          <th>Học Sinh</th>
+          <th>Mã Học Sinh</th>
+          <th>Họ Học Sinh</th>
+          <th>Tên Học Sinh</th>
           <th>Năm Học</th> 
           <th>Học Kỳ</th>
           <th>Loại Hạnh Kiểm</th>
@@ -211,9 +238,10 @@ footer {
           ?>
         <tr>
             <td><?php echo $result['MaHS']; ?></td>
+            <td><?php echo $result['HoHS']; ?></td>
+            <td><?php echo $result['TenHS']; ?></td>
             <td><?php echo $result['NamHoc']; ?></td>
-            <td><?php echo $result['HocKy']; ?></td>
-            <td><?php echo $result['MaHK']; ?></td>
+            <td><?php echo $result['LoaiHK']; ?></td>
             <td>
               <a href="#">
                 

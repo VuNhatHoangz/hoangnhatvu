@@ -201,7 +201,7 @@ footer {
 ?>
  /> -->
   <p></p>
-      <div class="scroll"; style="width:999px;height: 420px;">
+      <div class="scroll"; style="width:999px;height: 385px;">
         <table class="edit">
 <!-- 1 -->
         <tr>
@@ -221,8 +221,18 @@ footer {
             <td><?php echo $result['TenLop']; ?></td>
             <td><?php echo $result['TenGV']; ?></td>
             <td><?php echo $result['TenKhoi']; ?></td>
-            <td></td>
-            <td></td>
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
           </tr>
       <?php
         }

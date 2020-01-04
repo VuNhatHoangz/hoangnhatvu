@@ -21,7 +21,7 @@
     //$password = md5($password);
      
     //Kiểm tra tên đăng nhập có tồn tại không
-    $query = mysqli_query($db,"SELECT taikhoan, matkhau FROM dangnhap WHERE taikhoan='$username'");
+    $query = mysqli_query($db,"SELECT * FROM dangnhap WHERE taikhoan='$username'");
     if (mysqli_num_rows($query) == 0) {
         echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
@@ -31,15 +31,21 @@
     $row = mysqli_fetch_array($query);
      
     //So sánh 2 mật khẩu có trùng khớp hay không
-    if ($password != $row['matkhau']) {
+    if ($password != $row['MatKhau']) {
         echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
     }
   
     //Lưu tên đăng nhập
     $_SESSION['taikhoan'] = $username;
-    header("Location: bangdiem.php");
-    exit;
+    $_SESSION['pl'] = $row['phanloai'];
+    if($row['phanloai'] == 1){
+      header("Location: bangGVCN.php");
+    }
+    else{
+      header("Location: banghocsinh.php");
+    }
+      exit;
 }
    
 ?>
@@ -125,7 +131,7 @@ h2{
 
 <form action="dangnhap.php?do=login" method="post">
   <div class="imgcontainer">
-    <img src="logo.png" alt="Avatar" class="avatar" height="500px" width="-20px">
+    <img src="vy1logo.jpg" alt="Avatar" class="avatar" height="500px" width="-20px">
   </div>
 
   <div class="container">
@@ -146,6 +152,5 @@ h2{
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-
 </body>
 </html>

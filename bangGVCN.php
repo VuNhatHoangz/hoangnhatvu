@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -189,8 +189,6 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
@@ -199,6 +197,8 @@ footer {
           <th>Tên Giáo Viên</th> 
           <th>Địa Chỉ</th>
           <th>Số Điện Thoại</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -209,6 +209,18 @@ footer {
             <td><?php echo $result['TenGV']; ?></td>
             <td><?php echo $result['DiaChi']; ?></td>
             <td><?php echo $result['SDT']; ?></td>
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
           </tr>
       <?php
         }

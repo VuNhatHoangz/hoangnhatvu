@@ -151,7 +151,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -188,8 +188,6 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
   <select onchange="Redirect(this)">
     <?php
       if (mysqli_num_rows($query1) > 0) {
@@ -245,6 +243,8 @@ footer {
           <th>Điểm 15p</th>
           <th>Điểm 1Tiet</th>
           <th>Điểm Học Kỳ</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
           <?php
             if (mysqli_num_rows($query) > 0) {
@@ -259,6 +259,8 @@ footer {
             <td><?php echo $result['Diem15phut']; ?></td>
             <td><?php echo $result['Diem1Tiet']; ?></td>
             <td><?php echo $result['DiemHK']; ?></td>
+            <td></td>
+            <td></td>
           </tr>
         
       <?php

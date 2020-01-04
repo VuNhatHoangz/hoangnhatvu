@@ -154,7 +154,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -183,15 +183,13 @@ footer {
 <!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
   <h3 class="h3">Quản Lý Khối</h3>
-  <div class=" sangphai">
+  <!-- <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
   </div>
-  <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
+  <button class="themxoasua"><a href="#">Thêm</a></button> -->
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">

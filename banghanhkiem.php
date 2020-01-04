@@ -4,7 +4,7 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM HanhKiem");
+      $query = mysqli_query($db,"SELECT * FROM HanhKiemhs");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -191,27 +191,41 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
+ <!--  <button class="themxoasua"><a href="#">Sửa</a></button>
+  <button class="themxoasua"><a href="#">Xóa</a></button> -->
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
 <!-- 1 -->
         <tr>
-          <th>Mã Hạnh Kiểm</th>
+          <th>Học Sinh</th>
           <th>Năm Học</th> 
-          <th>Học Kì</th>
-          <th>Hạnh Kiểm</th>
+          <th>Học Kỳ</th>
+          <th>Loại Hạnh Kiểm</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaHK']; ?></td>
+            <td><?php echo $result['MaHS']; ?></td>
             <td><?php echo $result['NamHoc']; ?></td>
             <td><?php echo $result['HocKy']; ?></td>
-            <td><?php echo $result['HanhKiem']; ?></td>
+            <td><?php echo $result['MaHK']; ?></td>
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
           </tr>
           <?php
         }

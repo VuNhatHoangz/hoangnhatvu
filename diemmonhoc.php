@@ -4,10 +4,10 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop WHERE HocSinh.MaLop = Lop.MaLop and 
-        Lop.TenLop='".$_GET['lop']."'");
-
-      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
+      $query = mysqli_query($db,"SELECT * FROM diem,hocsinh,monhoc where diem.MaHS=hocsinh.MaHS and diem.MaMH = monhoc.MaMH 
+                            and diem.HocKy ='".$_GET['hk']."' and diem.MaMH = '".$_GET['id']."' and hocsinh.MaLop='".$_GET['lop']."'");
+      $query1 = mysqli_query($db,"select * from monhoc where MaMH='".$_GET['id']."'");
+      $query2 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -170,12 +170,12 @@ footer {
 
 <!-- 2 -->
 <section>
-    <nav  >
+    <nav >
 <div class="vertical-menu">
     <ul class="nav navbar-nav">
-        <?php       include ('menu.php'); ?>
-    <!-- <li><a href="http://localhost:91/website/banghocsinh.html" class="active">Học Sinh</a></li><br/>
-    <li><a href="http://localhost:91/website/bangkhoi.html" class="active">Điểm</a></li><br/>
+    <?php include ('menu.php'); ?>
+    <!-- <li><a href="#" class="active">Học Sinh</a></li><br/>
+    <li><a href="#" class="active">Điểm</a></li><br/>
     <li><a href="#" class="active">Lớp</a></li><br/>
     <li><a href="#" class="active">GVCN</a></li><br/>
     <li><a href="#" class="active">Khối</a></li><br/>
@@ -186,25 +186,34 @@ footer {
 </nav>
 <!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
-  <h3 class="h3">Quản Lý Học Sinh</h3>
-  <div class=" sangphai">
+  <?php
+    if (mysqli_num_rows($query1) > 0) {
+       while($result1=mysqli_fetch_array($query1)){
+  ?>
+  <h3 class="h3">Điểm Môn Học <?php echo $result1['TenMH']; ?></h3>
+  <?php
+    }
+  }
+  ?>
+  <!-- <div class=" sangphai">
     <div class="box">
       <input type="text" placeholder="Search here">
       <a class="a1"><i class="fas fa-search-location"></i></a>
     </div>
-  </div>
-  <button class="themxoasua"><a href="themhs.php">Thêm</a></button>
+  </div> -->
+  <button class="themxoasua"><a href="#">Học Kì 1</a></button>
+  <button class="themxoasua"><a href="#">Học Kì 2</a></button>
   <select onchange="Redirect(this)">
     <?php
-      if (mysqli_num_rows($query1) > 0) {
-              while($result1=mysqli_fetch_array($query1)){
-                if($result1['TenLop']==$_GET['lop'])
+      if (mysqli_num_rows($query2) > 0) {
+              while($result1=mysqli_fetch_array($query2)){
+                if($result1['MaLop']==$_GET['lop'])
                 {
-                  echo "<option value =banghocsinh.php?lop=".$result1['TenLop']." selected >".$result1['TenLop']."</option>";
+                  echo "<option value =diemmonhoc.php?id=".$_GET['id']."&hk=".$_GET['hk']."&lop=".$result1['MaLop']." selected >".$result1['TenLop']."</option>";
                 }
                 else
                 {
-                    echo "<option value =banghocsinh.php?lop=".$result1['TenLop'].">".$result1['TenLop']."</option>";
+                    echo "<option value =diemmonhoc.php?id=".$_GET['id']."&hk=".$_GET['hk']."&lop=".$result1['MaLop'].">".$result1['TenLop']."</option>";
                 }
                 
               }
@@ -224,16 +233,17 @@ footer {
         <table class="edit">
 <!-- 1 -->
         <tr>
-          <th>Mã HS</th>
-          <th>Họ HS</th> 
-          <th>Tên HS</th>
-          <th>Địa Chỉ</th>
+          <th>Mã Học Sinh</th>
+          <th>Họ Học Sinh</th>
+          <th>Tên Học Sinh</th>
           <th>Ngày Sinh</th>
-          <th>Quê Quán</th>
-          <th>Lớp</th>
-          <th>Giới Tính</th>
+          <th>Điểm Miệng</th>
+          <th>Điểm 15P</th>
+          <th>Điểm 1Tiết</th>
+          <th>Điểm Học Kỳ</th>
           <th>Edit</th>
           <th>Xoá</th>   
+
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -242,24 +252,14 @@ footer {
         <tr>
             <td><?php echo $result['MaHS']; ?></td>
             <td><?php echo $result['HoHS']; ?></td>
-            <td><a href="diemcanhan.php?id=<?php echo $result['MaHS'] ?>&hk=I"><?php echo $result['TenHS']; ?></a></td>
-            <td><?php echo $result['DiaChi']; ?></td>
+            <td><?php echo $result['TenHS']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>
-            <td><?php echo $result['QueQuan']; ?></td>
-            <td><?php echo $result['MaLop']; ?></td>
-            <td><?php echo $result['GioiTinh']; ?></td>
-            <td>
-              <a href="#">
-                
-                <img src="edit.png">
-              </a>
-            </td>
-            <td>
-              <a href="#">
-                
-                <img src="delete.png">
-              </a>
-            </td>
+            <td><?php echo $result['DiemMieng']; ?></td>
+            <td><?php echo $result['Diem15Phut']; ?></td>
+            <td><?php echo $result['Diem1Tiet']; ?></td>
+            <td><?php echo $result['DiemHK']; ?></td>
+            <td></td>
+            <td></td>
 
           </tr>
       <?php

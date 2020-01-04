@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -190,8 +190,16 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
+  <!-- <input type="button" name="Add to Cart">
+  <?php if ($_SESSION['pl']==1) {
+    echo 'onclick="addtocart('.$_SESSION['pl'].')" ';
+  }
+  else
+  {
+       echo ' disabled=disabled ';
+  }
+?>
+ /> -->
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
@@ -199,8 +207,10 @@ footer {
         <tr>
           <th>Mã Lớp</th>
           <th>Tên Lớp</th> 
-          <th>Mã Giao Viên</th>
-          <th>Mã Khối</th>
+          <th>Giáo Viên Chủ Nhiệm</th>
+          <th>Khối</th>
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -211,6 +221,8 @@ footer {
             <td><?php echo $result['TenLop']; ?></td>
             <td><?php echo $result['TenGV']; ?></td>
             <td><?php echo $result['TenKhoi']; ?></td>
+            <td></td>
+            <td></td>
           </tr>
       <?php
         }

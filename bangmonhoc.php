@@ -155,7 +155,7 @@ footer {
     <div class="collapse navbar-collapse" id="myNavbar">
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost:91/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
+        <li><a href="http://localhost:8888/hoangnhatvu/dangnhap.php"><span class="glyphicon glyphicon-log-in"></span> Đăng Nhập</a></li>
       </ul>
     </div>
   </div>
@@ -191,8 +191,6 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
-  <button class="themxoasua"><a href="#">Sửa</a></button>
-  <button class="themxoasua"><a href="#">Xóa</a></button>
   <p></p>
       <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
@@ -200,14 +198,28 @@ footer {
         <tr>
           <th>Mã Môn Học</th>
           <th>Tên Môn Học</th> 
+          <th>Edit</th>
+          <th>Xoá</th>   
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaMon']; ?></td>
-            <td><?php echo $result['TenMonHoc']; ?></td>
+            <td><?php echo $result['MaMH']; ?></td>
+            <td><a href="diemmonhoc.php?id=<?php echo $result['MaMH']; ?>&hk=I&lop=Lop10a0"><?php echo $result['TenMH']; ?></a></td>
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
 
           </tr>
       <?php

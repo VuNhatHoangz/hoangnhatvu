@@ -131,7 +131,7 @@ h2{
 
 <form action="dangnhap.php?do=login" method="post">
   <div class="imgcontainer">
-    <img src="logo.png" alt="Avatar" class="avatar" height="500px" width="-20px">
+    <img src="vy1logo.jpg" alt="Avatar" class="avatar" height="500px" width="-20px">
   </div>
 
   <div class="container">

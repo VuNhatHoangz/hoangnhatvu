@@ -248,8 +248,18 @@ footer {
             <td><?php echo $result['QueQuan']; ?></td>
             <td><?php echo $result['MaLop']; ?></td>
             <td><?php echo $result['GioiTinh']; ?></td>
-            <td></td>
-            <td></td>
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
 
           </tr>
       <?php

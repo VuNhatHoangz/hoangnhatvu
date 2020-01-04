@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php 
-      include ('connect.php');
+<!-- <?php 
+      // include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop WHERE HocSinh.MaLop = Lop.MaLop and 
-        Lop.TenLop='".$_GET['lop']."'");
+      // $query = mysqli_query($db,"SELECT * FROM HocSinh,Lop WHERE HocSinh.MaLop = Lop.MaLop and 
+      //   Lop.TenLop='".$_GET['lop']."'");
 
-      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
-?>
+      // $query1 =  mysqli_query($db,"SELECT * FROM Lop");
+?> -->
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -187,48 +187,14 @@ footer {
 <!-- 1 -->
 <article style="background: lightblue;padding: 0px;">
   <h3 class="h3">Thêm Học Sinh</h3>
-  <div class=" sangphai">
-    <div class="box">
-      <input type="text" placeholder="Search here">
-      <a class="a1"><i class="fas fa-search-location"></i></a>
-    </div>
-  </div>
-  <button class="themxoasua"><a href="#">Lưu</a></button>
-  
-      <div class="scroll"; style="width:999px;height: 420px;">
-        <table class="edit">
-<!-- 1 -->
-        <tr>
-          <th>Mã HS</th>
-          <th>Họ HS</th> 
-          <th>Tên HS</th>
-          <th>Địa Chỉ</th>
-          <th>Ngày Sinh</th>
-          <th>Quê Quán</th>
-          <th>Lớp</th>
-          <th>Giới Tính</th>
-        </tr>
-        <?php
-            if (mysqli_num_rows($query) > 0) {
-              while($result=mysqli_fetch_array($query)){
-          ?>
-        <tr>
-            <td><?php echo $result['MaHS']; ?></td>
-            <td><?php echo $result['HoHS']; ?></td>
-            <td><a href="diemcanhan.php?id=<?php echo $result['MaHS'] ?>&hk=I"><?php echo $result['TenHS']; ?></a></td>
-            <td><?php echo $result['DiaChi']; ?></td>
-            <td><?php echo $result['NgaySinh']; ?></td>
-            <td><?php echo $result['QueQuan']; ?></td>
-            <td><?php echo $result['MaLop']; ?></td>
-            <td><?php echo $result['GioiTinh']; ?></td>
+  <button class="themxoasua">Lưu</button>
+      <div class="container">
+    <label for="uname"><b>Tên Học Sinh</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
-          </tr>
-      <?php
-        }
-      }
-      ?>
-      
-      </table>
+    <label for="psw"><b>Họ Học Sinh</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  </div>
 </article>
 </section>
 

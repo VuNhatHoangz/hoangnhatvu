@@ -218,11 +218,8 @@ footer {
       </script>
   </select>
   <p></p>
-<<<<<<< HEAD
       <div class="scroll"; style="width:999px;height: 385px;">
-=======
       <div class="scroll"; style="width:999px;height: 420px;">
->>>>>>> 6228da740d5745bed08a75535f948504eb037afe
         <table class="edit">
 <!-- 1 -->
         <tr>
@@ -236,11 +233,8 @@ footer {
           <th>Điểm 15p</th>
           <th>Điểm 1 Tiết</th>
           <th>Điểm Học Kỳ</th>
-<<<<<<< HEAD
           <th>Edit</th>
           <th>Xoá</th>
-=======
->>>>>>> 6228da740d5745bed08a75535f948504eb037afe
         </tr>
         <?php
             if (mysqli_num_rows($query) > 0) {
@@ -257,7 +251,6 @@ footer {
             <td><?php echo $result['Diem15Phut']; ?></td>
             <td><?php echo $result['Diem1Tiet']; ?></td>
             <td><?php echo $result['DiemHK']; ?></td>
-<<<<<<< HEAD
              <td>
               <a href="#">
                 
@@ -270,9 +263,6 @@ footer {
                 <img src="delete.png">
               </a>
             </td>
-=======
-
->>>>>>> 6228da740d5745bed08a75535f948504eb037afe
           </tr>
       <?php
         }

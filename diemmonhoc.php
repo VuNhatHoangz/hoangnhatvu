@@ -229,11 +229,7 @@ footer {
       </script>
   </select>
   <p></p>
-<<<<<<< HEAD
-      <div class="scroll"; style="width:999px;height: 385px;">
-=======
-      <div class="scroll"; style="width:999px;height: 420px;">
->>>>>>> 6228da740d5745bed08a75535f948504eb037afe
+      <div class="scroll"; style="width:999px;height: 425px;">
         <table class="edit">
 <!-- 1 -->
         <tr>
@@ -262,9 +258,18 @@ footer {
             <td><?php echo $result['Diem15Phut']; ?></td>
             <td><?php echo $result['Diem1Tiet']; ?></td>
             <td><?php echo $result['DiemHK']; ?></td>
-            <td></td>
-            <td></td>
-
+            <td>
+              <a href="#">
+                
+                <img src="edit.png">
+              </a>
+            </td>
+            <td>
+              <a href="#">
+                
+                <img src="delete.png">
+              </a>
+            </td>
           </tr>
       <?php
         }

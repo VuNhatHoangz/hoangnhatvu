@@ -221,7 +221,6 @@ footer {
             <td><?php echo $result['TenLop']; ?></td>
             <td><?php echo $result['TenGV']; ?></td>
             <td><?php echo $result['TenKhoi']; ?></td>
-<<<<<<< HEAD
             <td>
               <a href="#">
                 
@@ -234,10 +233,8 @@ footer {
                 <img src="delete.png">
               </a>
             </td>
-=======
             <td></td>
             <td></td>
->>>>>>> 6228da740d5745bed08a75535f948504eb037afe
           </tr>
       <?php
         }

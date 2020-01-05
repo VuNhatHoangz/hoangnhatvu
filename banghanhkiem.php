@@ -4,7 +4,8 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"select * from hanhkiem,hanhkiemhs,hocsinh where hanhkiemhs.mahs = hocsinh.mahs and hanhkiemhs.mahs ='".$_GET['id']."' and hanhkiemhs.mahk = hanhkiemhs.mahk and hanhkiemhs.hocky= '".$_GET['hk']."'");
+      $query = mysqli_query($db,"select * from hanhkiem,hanhkiemhs,hocsinh where hanhkiemhs.mahs = hocsinh.mahs and hanhkiemhs.mahk = hanhkiem.mahk and hanhkiemhs.hocky= '".$_GET['hk']."' and hocsinh.MaLop ='".$_GET['lop']."' order by hocsinh.TenHS");
+      $query2 =  mysqli_query($db,"SELECT * FROM Lop");
       // $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
@@ -192,28 +193,31 @@ footer {
     </div>
   </div>
   <button class="themxoasua"><a href="#">Thêm</a></button>
+  <button class="themxoasua"><a href="banghanhkiem.php?hk=I&lop=<?php echo $_GET['lop']; ?>">Học Kỳ I</a></button>
+  <button class="themxoasua"><a href="banghanhkiem.php?hk=II&lop=<?php echo $_GET['lop']; ?>">Học Kỳ II</a></button>
  <!--  <button class="themxoasua"><a href="#">Sửa</a></button>
   <button class="themxoasua"><a href="#">Xóa</a></button> -->
   <select onchange="Redirect(this)">
     <?php
-      if($_GET['hk']=="I")
-      {
-        echo "<option value='I' selected>I</option>
-              <option value='II'>II</option>";
+      if (mysqli_num_rows($query2) > 0) {
+              while($result1=mysqli_fetch_array($query2)){
+                if($result1['MaLop']==$_GET['lop'])
+                {
+                  echo "<option value =banghanhkiem.php?hk=".$_GET['hk']."&lop=".$result1['MaLop']." selected >".$result1['TenLop']."</option>";
+                }
+                else
+                {
+                    echo "<option value =banghanhkiem.php?hk=".$_GET['hk']."&lop=".$result1['MaLop'].">".$result1['TenLop']."</option>";
+                }
+                
+              }
       }
-      else
-      {
-        echo "<option value='I'>I</option>
-              <option value='II' selected>II</option>";
-      }
-      ?>
-
+    ?>
      <script type="text/javascript">
          <!--
-            var id = "<?php echo $_GET['id'] ?>";
             function Redirect(obj) {
               var value = obj.value;
-              window.location="http://localhost:8888/hoangnhatvu/banghanhkiem.php?id="+id+"&hk="+value;
+              window.location="http://localhost:8888/hoangnhatvu/"+value;
             }
          //-->
       </script>

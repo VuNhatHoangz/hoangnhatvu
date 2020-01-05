@@ -4,6 +4,6 @@
     <li><button><a href="bangGVCN.php" class="active">DS Giáo Viên</a></button></li><br/>
     <li><button><a href="bangkhoi.php" class="active">Khối</a></button></li><br/>
     <li><button><a href="bangmonhoc.php" class="active">Môn Học</a></button></li><br/>
-    <li><button><a href="banghanhkiem.php?id='VY01'&hk=I" class="active">Hạnh Kiểm</a></button></li><br/>
+    <li><button><a href="banghanhkiem.php?hk=I&lop=Lop10a0" class="active">Hạnh Kiểm</a></button></li><br/>
 
 

@@ -249,7 +249,7 @@ footer {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['mahs']; ?></td>
+            <td><?php echo $result['MaHS']; ?></td>
             <td><?php echo $result['HoHS']; ?></td>
             <td><?php echo $result['TenHS']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>

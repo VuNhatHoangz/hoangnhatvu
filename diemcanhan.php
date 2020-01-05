@@ -219,7 +219,6 @@ footer {
   </select>
   <p></p>
       <div class="scroll"; style="width:999px;height: 385px;">
-      <div class="scroll"; style="width:999px;height: 420px;">
         <table class="edit">
 <!-- 1 -->
         <tr>

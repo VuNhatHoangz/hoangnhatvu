@@ -4,8 +4,8 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM HanhKiemhs");
-      $query1 =  mysqli_query($db,"SELECT * FROM Lop");
+      $query = mysqli_query($db,"select * from hanhkiem,hanhkiemhs,hocsinh where hanhkiemhs.mahs = hocsinh.mahs and hanhkiemhs.mahs ='".$_GET['id']."' and hanhkiemhs.mahk = hanhkiemhs.mahk and hanhkiemhs.hocky= '".$_GET['hk']."'");
+      // $query1 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
   <title>Quản Lý Học Sinh THPT Việt Yên Số 1</title>
   <meta charset="utf-8">
@@ -226,8 +226,7 @@ footer {
           <th>Mã Học Sinh</th>
           <th>Họ Học Sinh</th>
           <th>Tên Học Sinh</th>
-          <th>Năm Học</th> 
-          <th>Học Kỳ</th>
+          <th>Năm Học</th>
           <th>Loại Hạnh Kiểm</th>
           <th>Edit</th>
           <th>Xoá</th>   
@@ -237,11 +236,11 @@ footer {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaHS']; ?></td>
+            <td><?php echo $result['mahs']; ?></td>
             <td><?php echo $result['HoHS']; ?></td>
             <td><?php echo $result['TenHS']; ?></td>
-            <td><?php echo $result['NamHoc']; ?></td>
-            <td><?php echo $result['LoaiHK']; ?></td>
+            <td><?php echo $result['namhoc']; ?></td>
+            <td><?php echo $result['loaihk']; ?></td>
             <td>
               <a href="#">
                 

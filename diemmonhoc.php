@@ -4,8 +4,7 @@
 <?php 
       include ('connect.php');
 
-      $query = mysqli_query($db,"SELECT * FROM diem,hocsinh,monhoc where diem.MaHS=hocsinh.MaHS and diem.MaMH = monhoc.MaMH 
-                            and diem.HocKy ='".$_GET['hk']."' and diem.MaMH = '".$_GET['id']."' and hocsinh.MaLop='".$_GET['lop']."'");
+      $query = mysqli_query($db,"SELECT * FROM diem,hocsinh,monhoc where diem.MaHS=hocsinh.MaHS and diem.MaMH = monhoc.MaMH  and diem.HocKy ='".$_GET['hk']."' and diem.MaMH = '".$_GET['id']."' and hocsinh.MaLop='".$_GET['lop']."'");
       $query1 = mysqli_query($db,"select * from monhoc where MaMH='".$_GET['id']."'");
       $query2 =  mysqli_query($db,"SELECT * FROM Lop");
 ?>
@@ -250,7 +249,7 @@ footer {
               while($result=mysqli_fetch_array($query)){
           ?>
         <tr>
-            <td><?php echo $result['MaHS']; ?></td>
+            <td><?php echo $result['mahs']; ?></td>
             <td><?php echo $result['HoHS']; ?></td>
             <td><?php echo $result['TenHS']; ?></td>
             <td><?php echo $result['NgaySinh']; ?></td>

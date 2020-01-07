@@ -16,7 +16,7 @@
   <!-- btn -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- btn -->
-
+<link rel="stylesheet" type="text/css" href="hanhkiem.css">
   <!-- search -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="search_box.css">
@@ -28,118 +28,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    body{
-      margin: auto;
-    }
-
-.vertical-menu {
-  width: 500px;
-}
-
-.vertical-menu a {
-  background-color: rgb(238, 238, 238);
-  color: black;
-  display: block;
-  padding: 12px;
-  text-decoration: none;
-  height: 79px;
-  width: 300px;
-}
-
-.vertical-menu a:hover {
-  background-color: rgb(204, 204, 204);
-}
-
-.vertical-menu a.active {
-  background-color: rgb(76, 175, 109);
-  color: rgb(255, 255, 255);
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-/* xxxxxxxxxx */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
-}  
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/*3*/
-.scroll{
-  display: block;
-  border: 3px double black;
-  padding: 5px;
-  margin-top: 5px;
-  overflow: scroll;
-  }
-  .edit{
-    width: 1000px;
-    height: 410px;
-    border: 2px groove black;
-  }
-  header{
-    background-image: url("vietyen1.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
-  body{
-    background-color: lightblue;
-  }
-  .img{
-    width: 1500px;
-    height: 200px;
-  }
-
-  .themxoasua{
-    margin-left: 50px;
-  }
-  .h3{
-    margin: 7px;
-  }
-
-  /*3*/
+   /*lll*/
   </style>
 </head>
 <body>

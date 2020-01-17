@@ -43,7 +43,6 @@ Công dụng
 
 💻 Hướng phát triển cho bài toán
 -trong phần học sinh và điểm cá nhân sẽ có hình ảnh của cá nhân học sinh đó
--đăng nhập có phân quyền để học sinh có thể vào và xem điểm của mình ,mở rộng đề tài
 -xuất điểm,danh sách điểm,... ra file exel hoặc file word để tiện cho việc quản lý hơn
 -giao diện đẹp mắt chứ không code tay như bài
 -tạo trang thời khoá biểu cho học sinh để học sinh có thể đăng nhập vào xem
